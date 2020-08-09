@@ -12,8 +12,7 @@ public class Banda {
 
     private String nome;
 
-    @JoinColumn
-    @OneToMany
+    @OneToMany(cascade=CascadeType.ALL)
     private Set<Album> albums;
 
     public Long getId() {

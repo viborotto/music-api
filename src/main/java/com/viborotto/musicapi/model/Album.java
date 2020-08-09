@@ -14,8 +14,7 @@ public class Album {
 
     private String ano;
 
-    @JoinColumn
-    @OneToMany
+    @OneToMany(cascade=CascadeType.ALL)
     private Set<Musica> musicas;
 
     @ManyToOne
