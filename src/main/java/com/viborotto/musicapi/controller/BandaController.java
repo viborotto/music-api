@@ -24,10 +24,10 @@ public class BandaController {
         return ResponseEntity.status(HttpStatus.OK).body(bandaService.porId(id));
     }
 
-    @GetMapping("/banda/{nome}")
-    public ResponseEntity<?> getByNome(@PathVariable String nome) throws Exception {
-        return ResponseEntity.status(HttpStatus.OK).body(bandaService.porNome(nome));
-    }
+    //    @GetMapping("/banda/{nome}")
+    //    public ResponseEntity<?> getByNome(@PathVariable String nome) throws Exception {
+    //        return ResponseEntity.status(HttpStatus.OK).body(bandaService.porNome(nome));
+    //    }
 
     @PostMapping("/banda/nova_banda")
     public ResponseEntity<?> postBanda(@RequestBody Banda banda) throws Exception {
