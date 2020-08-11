@@ -14,7 +14,7 @@ public class Musica {
 
     private Time duracao;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Album album;
 
     public Long getId() {

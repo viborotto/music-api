@@ -12,7 +12,7 @@ public class Banda {
 
     private String nome;
 
-    @OneToMany(cascade=CascadeType.ALL)
+    @OneToMany(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
     private Set<Album> albums;
 
     public Long getId() {

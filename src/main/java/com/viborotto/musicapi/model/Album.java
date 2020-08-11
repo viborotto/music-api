@@ -14,10 +14,10 @@ public class Album {
 
     private String ano;
 
-    @OneToMany(cascade= CascadeType.ALL)
+    @OneToMany(cascade= CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Musica> musicas;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Banda banda;
 
 
