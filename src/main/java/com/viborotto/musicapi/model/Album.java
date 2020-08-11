@@ -14,7 +14,7 @@ public class Album {
 
     private String ano;
 
-    @OneToMany(cascade=CascadeType.ALL)
+    @OneToMany(cascade= CascadeType.ALL)
     private Set<Musica> musicas;
 
     @ManyToOne
