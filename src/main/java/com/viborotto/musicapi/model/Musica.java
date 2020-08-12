@@ -15,6 +15,7 @@ public class Musica {
     private Time duracao;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "album_id")
     private Album album;
 
     public Long getId() {

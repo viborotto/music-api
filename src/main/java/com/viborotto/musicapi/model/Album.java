@@ -18,6 +18,7 @@ public class Album {
     private Set<Musica> musicas;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "banda_id")
     private Banda banda;
 
 
