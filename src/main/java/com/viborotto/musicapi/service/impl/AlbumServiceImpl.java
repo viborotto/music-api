@@ -1,4 +1,4 @@
-package com.viborotto.musicapi.service;
+package com.viborotto.musicapi.service.impl;
 
 import org.springframework.stereotype.Service;
 

@@ -18,6 +18,7 @@ public class Musica {
     @JoinColumn(name = "album_id")
     private Album album;
 
+    //TODO BUILDER E MAPSTRUCT
     public Long getId() {
         return id;
     }

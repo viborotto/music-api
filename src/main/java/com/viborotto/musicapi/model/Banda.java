@@ -15,6 +15,7 @@ public class Banda {
     @OneToMany(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
     private Set<Album> albums;
 
+    //TODO BUILDER E MAPSTRUCT
     public Long getId() {
         return id;
     }

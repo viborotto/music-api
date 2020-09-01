@@ -21,7 +21,7 @@ public class Album {
     @JoinColumn(name = "banda_id")
     private Banda banda;
 
-
+    //TODO BUILDER E MAPSTRUCT
     public Long getId() {
         return id;
     }
