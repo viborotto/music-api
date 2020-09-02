@@ -43,7 +43,7 @@ public class AlbumController {
     }
 
     @DeleteMapping("/{bandaId}/albums/{albumId}")
-    public ResponseEntity<?> deleteAlbum(@PathVariable Long bandaId,@PathVariable Long albumId, @RequestBody Album album){
+    public ResponseEntity<?> deleteAlbum(@PathVariable Long bandaId,@PathVariable Long albumId){
         albumService.deletarAlbumDaBanda(albumId);
         return ResponseEntity.ok().build();
     }
