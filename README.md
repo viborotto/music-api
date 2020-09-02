@@ -11,5 +11,5 @@ Endpoints:
 [X]/api/v1/albums  
 [X]/api/v1/album/{album_id}  
 [X]/api/v1/album/novo_album  
-/api/v1/album/{album_id}/musicas  
-/api/v1/album/{album_id}/musica/{musica_id}  
+[X]/api/v1/album/{album_id}/musicas  
+[X]/api/v1/album/{album_id}/musica/{musica_id}  
