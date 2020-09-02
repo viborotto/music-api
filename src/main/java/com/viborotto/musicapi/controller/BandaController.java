@@ -1,6 +1,7 @@
 package com.viborotto.musicapi.controller;
 
 import com.viborotto.musicapi.model.Banda;
+import com.viborotto.musicapi.service.BandaService;
 import com.viborotto.musicapi.service.impl.BandaServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class BandaController {
 
     @Autowired
-    private BandaServiceImpl bandaService;
+    private BandaService bandaService;
 
     @GetMapping("/bandas")
     public ResponseEntity<?> getList() {

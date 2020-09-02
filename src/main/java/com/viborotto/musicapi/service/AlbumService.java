@@ -7,13 +7,13 @@ import java.util.List;
 
 public interface AlbumService {
 
-    List<Album> listarAlbumsdaBanda(Long idBanda);
+    List<Album> listarByBanda(Long idBanda);
 
     Album getByIdAndBanda(Long idAlbum, Banda banda);
 
     Album inserirNovoAlbumNaBanda(Long idBanda, Album album);
 
-    Album atualizarAlbumsdaBanda(Long idAlbum, Album album);
+    Album atualizarAlbumdaBanda(Long idAlbum, Album album);
 
     void deletarAlbumDaBanda(Long idAlbum);
 }

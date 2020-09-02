@@ -21,39 +21,48 @@ public class AlbumServiceImpl implements AlbumService {
     @Autowired
     private BandaRepository bandaRepository;
 
+    public AlbumServiceImpl(AlbumRepository albumRepository, BandaRepository bandaRepository) {
+        this.albumRepository=albumRepository;
+        this.bandaRepository=bandaRepository;
+    }
+
     @Override
-    public List<Album> listarAlbumsdaBanda(Long id) {
-        Banda bandaEncontrada = validateBanda(bandaRepository.findById(id));
+    public List<Album> listarByBanda(Long idBanda) {
+        Banda bandaEncontrada = validateBanda(bandaRepository.findById(idBanda));
         return albumRepository.findByBanda(bandaEncontrada);
     }
 
     //TODO encontrar o album porId associado a certa banda de idBanda, como seria isso?
     @Override
     public Album getByIdAndBanda(Long idAlbum, Banda banda) {
-        return albumRepository.findByIdAndBanda(idAlbum, banda);
+        return validateAlbum(albumRepository.findByIdAndBanda(idAlbum, banda));
     }
 
     @Override
     public Album inserirNovoAlbumNaBanda(Long idBanda, Album album) {
         Banda bandaEncontrada = validateBanda(bandaRepository.findById(idBanda));
-        album.setBanda(bandaEncontrada);
+        album.setBanda(validateBanda(Optional.ofNullable(bandaEncontrada)));
         return albumRepository.save(album);
     }
 
-    //TODO Atualizar varios Albums
+    //TODO Como seria para Atualizar varios Albums e nao somente 1?
     @Override
-    public Album atualizarAlbumsdaBanda(Long idAlbum, Album album) {
-        Album albumDb = validateAlbum(albumRepository.findById(idAlbum));
+    public Album atualizarAlbumdaBanda(Long idAlbum, Album album) {
+        //encontro o album a ser atualizado
+        Album albumDB = validateAlbum(albumRepository.findById(idAlbum));
+        //encontrar a banda do respectivo album a ser atualizado
         validateBanda(bandaRepository.findById(album.getBanda().getId()));
-        albumDb.setTitulo(album.getTitulo());
-        albumDb.setAno(album.getAno());
-        albumDb.setMusicas(album.getMusicas());
-        return albumRepository.save(albumDb);
+        //atualizar campos
+        albumDB.setTitulo(album.getTitulo());
+        albumDB.setAno(album.getAno());
+        albumDB.setMusicas(album.getMusicas());
+        return albumRepository.save(albumDB);
     }
 
     @Override
     public void deletarAlbumDaBanda(Long idAlbum) {
         Album album = validateAlbum(albumRepository.findById(idAlbum));
+        //encontrar a banda do respectivo album a ser deletado
         validateBanda(bandaRepository.findById(album.getBanda().getId()));
         albumRepository.delete(album);
     }
