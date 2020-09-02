@@ -3,7 +3,7 @@
 Endpoints:
 
 
-[X]/api/v1/bandas
+[X]/api/v1/bandas \n
 [X]/api/v1/banda/{banda_id}
 [X]/api/v1/banda/nova_banda
 
