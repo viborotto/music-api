@@ -41,7 +41,7 @@ public class AlbumServiceImpl implements AlbumService {
     @Override
     public Album inserirNovoAlbumNaBanda(Long idBanda, Album album) {
         Banda bandaEncontrada = validateBanda(bandaRepository.findById(idBanda));
-        album.setBanda(validateBanda(Optional.ofNullable(bandaEncontrada)));
+        album.setBanda(bandaEncontrada);
         return albumRepository.save(album);
     }
 
