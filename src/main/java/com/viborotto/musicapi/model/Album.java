@@ -22,11 +22,12 @@ public class Album {
 
     private String ano;
 
+    @JsonManagedReference
     @JsonBackReference
     @OneToMany(cascade= CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Musica> musicas;
 
-    @JsonManagedReference
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "banda_id")
     private Banda banda;

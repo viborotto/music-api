@@ -2,6 +2,7 @@ package com.viborotto.musicapi.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
@@ -19,7 +20,7 @@ public class Banda {
 
     private String nome;
 
-    @JsonBackReference
+    @JsonManagedReference
     @OneToMany(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
     private Set<Album> albums;
 
