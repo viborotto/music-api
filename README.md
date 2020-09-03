@@ -36,7 +36,7 @@ Endpoints:
                     {
                         "id": 1,
                         "nome": "Hymn for the Weekend",
-                        "duracao": 4:19,
+                        "duracao": "4:19",
                         "album": 1
                     }
                 ],
@@ -56,7 +56,7 @@ Endpoints:
                     {
                         "id": 3,
                         "nome": "Bad Lier",
-                        "duracao": 4:21,
+                        "duracao": "4:21",
                         "album": 2
                     }
                 ],
