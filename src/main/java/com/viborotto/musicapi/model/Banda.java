@@ -1,9 +1,16 @@
 package com.viborotto.musicapi.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id")
 public class Banda {
 
     @Id
@@ -12,6 +19,7 @@ public class Banda {
 
     private String nome;
 
+    @JsonBackReference
     @OneToMany(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
     private Set<Album> albums;
 

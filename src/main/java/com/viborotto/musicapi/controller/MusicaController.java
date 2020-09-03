@@ -36,7 +36,6 @@ public class MusicaController {
         return ResponseEntity.ok(musica);
     }
 
-    //post musica
     @PostMapping("/{bandaId}/albums/{albumId}/musicas")
     public ResponseEntity<?> createMusica(@PathVariable Long bandaId, @PathVariable Long albumId, @RequestBody Musica musica){
         Banda banda = bandaService.getBanda(bandaId);
@@ -44,13 +43,12 @@ public class MusicaController {
         return ResponseEntity.ok(musicaService.inserirNovaMusicaNoAlbum(albumId, musica));
     }
 
-    //patch musica
+    //TODO : arrumar o patch(nao esta funcionando)
     @PatchMapping("/{bandaId}/albums/{albumId}/musicas/{musicaId}")
     public ResponseEntity<?> updateAlbum(@PathVariable Long bandaId,@PathVariable Long albumId, @RequestBody Musica musica, @PathVariable Long musicaId){
         return ResponseEntity.ok(musicaService.atualizarMusicaDoAlbum(musicaId,musica));
     }
 
-    //delete musica
     @DeleteMapping("/{bandaId}/albums/{albumId}/musicas/{musicaId}")
     public ResponseEntity<?> deleteMusica(@PathVariable Long bandaId, @PathVariable Long albumId, @PathVariable Long musicaId){
         musicaService.deletarMusicaDoAlbum(musicaId);
