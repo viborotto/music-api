@@ -30,7 +30,7 @@ Endpoints:
                     {
                         "id": 2,
                         "nome": "Up&Up",
-                        "duracao": 6:45,
+                        "duracao": "6:45",
                         "album": 1
                     },
                     {
